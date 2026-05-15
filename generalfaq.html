@@ -7,12 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PixelCraft FAQ Page</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -25,12 +20,10 @@
         }
 
         body {
-
-            font-family: 'Roboto Slab', serif;
+            font-family: Roboto Slab, serif;
             font-size: 16px;
             line-height: 150%;
             font-weight: 400;
-
             color: #535353;
             background: #f4f5f7;
 
@@ -45,124 +38,91 @@
         }
 
         #container {
-
             width: 100%;
             max-width: 100%;
-
             padding: 0 30px;
             margin: auto;
 
         }
 
         h2 {
-
             font-size: 36px;
             line-height: 130%;
             font-weight: 600;
-
             color: #ad2481;
-
         }
 
         p {
-
             font-size: 16px;
             line-height: 150%;
             font-weight: 400;
-
             color: #535353;
-
-        }        
+        }
 
         #page-header {
-
             background: #ffffff;
             border-bottom: 1px solid #dddddd;
-
         }
 
         #page-header #container {
-
             padding-top: 35px;
             padding-bottom: 25px;
-
         }
 
         #breadcrumb {
-
             margin-top: 18px;
-
             font-size: 14px;
             color: #535353;
-
         }
 
         #breadcrumb span {
-
             color: #2493ad;
-
         }
 
         #search-section {
-
             padding-top: 24px;
             padding-bottom: 24px;
-
         }
 
         #search-box {
-
             display: flex;
             align-items: center;
             gap: 20px;
-
         }
 
         #search-box input {
-
             flex: 1;
             height: 52px;
             border: 1px solid #dddddd;
             background: #ffffff;
             padding: 0 18px;
             outline: none;
-            font-family: 'Roboto Slab', serif;
+            font-family: Roboto Slab, serif;
             font-size: 15px;
-
         }
 
         #search-actions {
-
             display: flex;
             gap: 18px;
-
         }
 
         #search-actions a {
-
             color: #2493ad;
             font-size: 14px;
             font-weight: 600;
-
-        } 
+        }
 
         #faq-layout {
-
             display: flex;
             align-items: flex-start;
             gap: 22px;
-
             padding-bottom: 70px;
-
         }
 
         #faq-sidebar {
-
             width: 280px;
-
             background: #ffffff;
             border: 1px solid #dddddd;
-
         }
 
         #faq-toggle {
@@ -172,103 +132,74 @@
         #faq-sidebar-header {
 
             background: #2493ad;
-
             color: #ffffff;
-
             padding: 16px 18px;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
-
         }
 
         #faq-sidebar-header h3 {
-
-            font-size: 20px;
+            font-size: 28px;
             font-weight: 600;
-            line-height: 140%;
-
+            line-height: 130%;
             color: #ffffff;
 
         }
 
         #toggle-btn {
-
             font-size: 28px;
             font-weight: 700;
-
             cursor: pointer;
-
         }
 
         #toggle-btn::before {
             content: "+";
         }
 
-        #faq-toggle:checked + #faq-sidebar-header #toggle-btn::before {
+        #faq-toggle:checked+#faq-sidebar-header #toggle-btn::before {
             content: "−";
         }
 
         #faq-topic-list li {
-
             border-bottom: 1px solid #ececec;
-
         }
 
         #faq-topic-list li a {
-
             display: block;
-
             padding: 16px 18px;
-
             color: #535353;
-
             transition: 0.3s ease;
-
         }
 
         #faq-topic-list li a:hover {
-
             background: #f8f8f8;
             color: #2493ad;
-
         }
 
         #hidden-topics {
-
             max-height: 0;
             overflow: hidden;
-
             opacity: 0;
-
             transition: all 0.4s ease;
-
         }
 
-        #faq-toggle:checked ~ #faq-topic-list #hidden-topics {
-
+        #faq-toggle:checked~#faq-topic-list #hidden-topics {
             max-height: 500px;
-
             opacity: 1;
-
         }
 
         #faq-content {
-
             flex: 1;
             width: 100%;
-
         }
 
         .faq-section {
-
             background: #ffffff;
             border: 1px solid #dddddd;
             margin-bottom: 22px;
             display: none;
             animation: fadeIn 0.3s ease;
-
         }
 
         #general {
@@ -284,19 +215,15 @@
         }
 
         #faq-title {
-
             background: #0c5d91;
             color: #ffffff;
             padding: 15px 20px;
-            font-size: 20px;
+            font-size: 28px;
             font-weight: 600;
-
         }
 
         .faq-item {
-
             border-bottom: 1px solid #ececec;
-
         }
 
         .faq-item:last-child {
@@ -304,14 +231,12 @@
         }
 
         .faq-item summary {
-
             list-style: none;
             cursor: pointer;
             padding: 18px 20px;
             position: relative;
             font-size: 16px;
             font-weight: 500;
-
         }
 
         .faq-item summary::-webkit-details-marker {
@@ -319,7 +244,6 @@
         }
 
         .faq-item summary::after {
-
             content: "+";
             position: absolute;
             right: 20px;
@@ -327,7 +251,6 @@
             transform: translateY(-50%);
             font-size: 22px;
             font-weight: 700;
-
         }
 
         .faq-item[open] summary::after {
@@ -335,56 +258,39 @@
         }
 
         .faq-answer {
-
             padding: 0 20px 20px;
             animation: fadeIn 0.3s ease;
-
         }
 
         @keyframes fadeIn {
-
             from {
-
                 opacity: 0;
                 transform: translateY(10px);
-
             }
 
             to {
-
                 opacity: 1;
                 transform: translateY(0);
-
             }
-
         }
 
         @media(max-width:992px) {
-
             #faq-layout {
-
                 flex-direction: column;
-
             }
 
             #faq-sidebar {
-
                 width: 100%;
-
             }
-
         }
 
         @media(max-width:768px) {
 
             #search-box {
-
                 flex-direction: column;
-
             }
 
         }
-
     </style>
 
 </head>
@@ -811,7 +717,7 @@
                         </details>
 
                     </div>
-                    
+
                     <div id="printing" class="faq-section">
 
                         <div id="faq-title">
@@ -1030,6 +936,78 @@
 
                         </details>
 
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you offer bulk discounts?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Bulk quantity orders
+                                    receive discounted pricing
+                                    depending on order size.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I request a custom quotation?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Absolutely. Personalized quotes
+                                    are available for custom
+                                    printing projects.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are taxes included in the pricing?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Taxes are calculated during
+                                    checkout based on your
+                                    billing location.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you provide installment payment options?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Selected business projects
+                                    may qualify for milestone
+                                    based payment plans.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
 
                     <div id="support" class="faq-section">
@@ -1055,6 +1033,77 @@
 
                         </details>
 
+                        <details class="faq-item">
+
+                            <summary>
+                                What are your support timings?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Our support team is available
+                                    Monday to Saturday from
+                                    9 AM to 7 PM.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you provide design assistance?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Our designers help
+                                    customers with layouts,
+                                    branding, and artwork setup.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                How quickly do you respond?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Most inquiries receive responses
+                                    within a few business hours.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I track my support request?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Support ticket updates
+                                    are shared through
+                                    email notifications.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
 
                     <div id="returns" class="faq-section">
@@ -1074,6 +1123,78 @@
                                 <p>
                                     Returns are accepted only
                                     for damaged or incorrect items.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                How do I request a refund?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Contact support with order
+                                    details and product images
+                                    to begin the process.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                How long do refunds take?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Approved refunds are usually
+                                    processed within 5–10
+                                    business days.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can damaged products be replaced?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Replacement requests are
+                                    reviewed and processed
+                                    after verification.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are shipping charges refundable?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Shipping fees are refundable
+                                    only if the issue was
+                                    caused by our team.
                                 </p>
 
                             </div>
@@ -1106,6 +1227,78 @@
 
                         </details>
 
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you share customer information?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    No. Customer information is never
+                                    sold or shared with
+                                    unauthorized third parties.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are online payments secure?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. All transactions are
+                                    protected using SSL
+                                    security protocols.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I delete my account data?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Customers can request account
+                                    deletion by contacting
+                                    support directly.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                How are customer files stored?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Files are securely stored on
+                                    protected servers with
+                                    restricted access.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
 
                     <div id="eco" class="faq-section">
@@ -1126,6 +1319,78 @@
                                     Yes. Environmentally safe
                                     printing inks are available
                                     for selected products.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are recycled papers available?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    We provide recycled paper
+                                    options for brochures,
+                                    cards, and packaging.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can eco-friendly products be customized?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Absolutely. Sustainable materials
+                                    can be customized according
+                                    to your branding needs.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you reduce production waste?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Our production workflow
+                                    minimizes material waste
+                                    and excess printing.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are biodegradable packaging options available?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Biodegradable packaging
+                                    solutions are available for
+                                    selected product categories.
                                 </p>
 
                             </div>

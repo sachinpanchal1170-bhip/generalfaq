@@ -12,6 +12,24 @@
         rel="stylesheet">
 
     <style>
+    
+        :root {
+
+            --primary: #ad2481;
+            --secondary: #2493ad;
+            --text: #535353;
+            --white: #ffffff;
+            --light: #f4f5f7;
+            --border: #dddddd;
+
+            --h1: 48px;
+            --h2: 36px;
+            --h3: 28px;
+            --h4: 20px;
+            --p: 16px;
+
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -25,263 +43,509 @@
 
         body {
             font-family: 'Roboto Slab', serif;
-            background: #f4f7fa;
-            color: #535353;
-            overflow-x: hidden;
+            font-size: var(--p);
+            line-height: 150%;
+            font-weight: 400;
+            color: var(--text);
+            background: var(--light);
         }
 
-        .top-bar {
-            background: #2493ad;
-            color: #fff;
-            padding: 12px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 14px;
+        a {
+            text-decoration: none;
         }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 30px;
+            margin: 0 auto;
+
+        }
+
+        
+
+        h1 {
+            font-size: var(--h1);
+            line-height: 125%;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        h2 {
+            font-size: var(--h2);
+            line-height: 130%;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: var(--h3);
+            line-height: 130%;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        h4 {
+            font-size: var(--h4);
+            line-height: 140%;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        p {
+            font-size: var(--p);
+            line-height: 150%;
+            font-weight: 400;
+            color: var(--text);
+        }
+
+        
+
+        
 
         .main-header {
-            background: #fff;
-            padding: 22px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-            position: sticky;
-            top: 0;
-            z-index: 999;
+
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #dddddd;
+            padding: 16px 0;
+
         }
 
-        .logo {
-            font-size: 38px;
+        .header-container {
+
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+
+        }
+
+        
+
+        .menu-bar {
+
+            width: 100%;
+            background: #ffffff;
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #dcdcdc;
+
+        }
+
+        .menu-container {
+
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            padding: 0 30px;
+
+        }
+
+        .menu-list {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 42px;
+
+            padding: 18px 0;
+
+        }
+
+        .menu-list li {
+
+            position: relative;
+
+        }
+
+        .menu-list li a {
+
+            font-size: 16px;
             font-weight: 700;
+            color: #111111;
+
+            transition: 0.3s ease;
+
+            position: relative;
+            padding-bottom: 10px;
+
+        }
+
+        
+
+        .menu-list li a::after {
+
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            width: 0%;
+            height: 3px;
+
+            background: #2493ad;
+
+            transition: 0.3s ease;
+
+        }
+
+        .menu-list li a:hover {
+
+            color: #2493ad;
+
+        }
+
+        .menu-list li a:hover::after {
+
+            width: 100%;
+
+        }
+
+        
+
+        @media(max-width:992px) {
+
+            .menu-list {
+
+                justify-content: flex-start;
+                gap: 22px;
+
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            .menu-list {
+
+                flex-direction: column;
+                align-items: flex-start;
+
+            }
+
+        }
+
+        
+
+        .logo {
+
+            font-size: 45px;
+            font-weight: 700;
+            line-height: 100%;
             color: #ad2481;
+            font-family: 'Roboto Slab', serif;
+
         }
 
         .logo span {
+
             color: #2493ad;
+
         }
 
-        .navbar {
-            display: flex;
-            gap: 35px;
-        }
+        
 
-        .navbar a {
-            text-decoration: none;
-            color: #535353;
-            font-weight: 600;
-            position: relative;
-            transition: 0.3s;
-        }
+        .search-bar {
 
-        .navbar a:hover {
-            color: #ad2481;
-        }
+            flex: 1;
+            max-width: 620px;
 
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 0;
-            height: 3px;
-            background: #2493ad;
-            transition: 0.3s;
-        }
-
-        .navbar a:hover::after {
-            width: 100%;
-        }
-
-        .faq-hero {
-            background: linear-gradient(135deg, #ad2481, #2493ad);
-            padding: 100px 20px;
-            text-align: center;
-            color: #fff;
-        }
-
-        .faq-hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .faq-hero p {
-            max-width: 900px;
-            margin: auto;
-            line-height: 1.9;
-            font-size: 16px;
-        }
-
-        .faq-wrapper {
-            width: 90%;
-            max-width: 1450px;
-            margin: 70px auto;
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-        }
-
-        .faq-sidebar {
-            width: 290px;
-            background: #fff;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-            position: relative;
-            top: 0;
-            transition: 0.5s ease;
-        }
-
-        .faq-sidebar h3 {
-            background: #ad2481;
-            color: #fff;
-            padding: 22px;
-            font-size: 28px;
-        }
-
-        .faq-sidebar-header {
-            background: #ad2481;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding-right: 20px;
+
+            border: 1px solid #cfd6dc;
+            border-radius: 50px;
+            overflow: hidden;
+
+            background: #ffffff;
+
+        }
+
+        .search-bar input {
+
+            width: 100%;
+            height: 58px;
+
+            border: none;
+            outline: none;
+
+            padding: 0 24px;
+
+            font-size: 18px;
+            font-family: 'Roboto Slab', serif;
+            color: #535353;
+
+        }
+
+        .search-bar button {
+
+            width: 70px;
+            height: 58px;
+
+            border: none;
+            background: #ffffff;
+
+            cursor: pointer;
+
+            font-size: 24px;
+            color: #005792;
+
+        }
+
+        
+
+        .header-contact {
+
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+        }
+
+        .contact-box {
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            padding-left: 22px;
+
+            border-left: 1px solid #d9d9d9;
+
+        }
+
+        .contact-box:first-child {
+
+            border-left: none;
+            padding-left: 0;
+
+        }
+
+        .contact-box .icon {
+
+            font-size: 34px;
+            color: #4a4a4a;
+
+        }
+
+        .contact-box h4 {
+
+            font-size: 16px;
+            line-height: 120%;
+            font-weight: 700;
+            color: #2e2e2e;
+
+        }
+
+        .contact-box p {
+
+            font-size: 15px;
+            line-height: 130%;
+            font-weight: 600;
+            color: #2e2e2e;
+
+        }
+
+        
+
+        @media(max-width:1200px) {
+
+            .header-container {
+
+                flex-wrap: wrap;
+
+            }
+
+            .search-bar {
+
+                order: 3;
+                width: 100%;
+                max-width: 100%;
+
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            .header-contact {
+
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+
+            }
+
+            .contact-box {
+
+                border-left: none;
+                padding-left: 0;
+
+            }
+
+            .logo img {
+
+                width: 240px;
+
+            }
+
+        }
+
+        .page-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header .container {
+                padding:28px 30px 20px;
+        }
+
+        .breadcrumb {
+            margin-top: 4px;
+            font-size: 14px;
+            color: #535353;
+        }
+
+        .breadcrumb span {
+            color: var(--secondary);
+        }
+
+        
+
+        .search-section {
+            padding: 20px 0;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box input {
+            flex: 1;
+            height: 50px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            padding: 0 18px;
+            outline: none;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .search-actions {
+            display: flex;
+            gap: 18px;
+            font-size: 14px;
+        }
+
+        .search-actions a {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        
+
+        .faq-layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            width: 100%;
+            padding-bottom: 60px;
+        }
+
+         .faq-content {
+
+            flex: 1;
+            width: 100%;
+
+        }
+        
+
+        .faq-sidebar {
+            width: 260px;
+            background: var(--white);
+            border: 1px solid var(--border);
         }
 
         #faq-toggle {
             display: none;
         }
 
+        .faq-sidebar-header {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 14px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-sidebar-header h4 {
+            color: var(--white);
+        }
+
         .toggle-btn {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
+            font-size: 28px;
             cursor: pointer;
-            position: relative;
-            transition: 0.4s;
-        }
-
-        .toggle-btn:hover {
-            transform: rotate(90deg);
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        .toggle-btn::before,
-        .toggle-btn::after {
-            content: '';
-            position: absolute;
-            background: #fff;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: 0.4s;
+            font-weight: 700;
         }
 
         .toggle-btn::before {
-            width: 16px;
-            height: 2px;
+            content: "+";
         }
 
-        .toggle-btn::after {
-            width: 2px;
-            height: 16px;
+        #faq-toggle:checked+.faq-sidebar-header .toggle-btn::before {
+            content: "−";
         }
 
-        #faq-toggle:checked+.faq-sidebar-header .toggle-btn::after {
-            opacity: 0;
-        }
-
-        .faq-topic-list {
-            list-style: none;
-        }
-
-        .extra-topic {
-            opacity: 0;
-            visibility: hidden;
-
-            max-height: 0;
-            overflow: hidden;
-
-            transform: translateY(-15px);
-
-            transition:
-                opacity 0.5s ease,
-                transform 0.5s ease,
-                max-height 0.5s ease;
-        }
-
-        #faq-toggle:checked~.faq-topic-list .extra-topic {
-            opacity: 1;
-            visibility: visible;
-
-            max-height: 80px;
-
-            transform: translateY(0);
-        }
-
-        .faq-sidebar {
-            transition: 0.5s ease;
-        }
-
-        .faq-sidebar ul {
-            list-style: none;
-        }
-
-        .faq-sidebar ul li {
+        .faq-topic-list li {
             border-bottom: 1px solid #ececec;
         }
 
-        .faq-sidebar ul li a {
+        .faq-topic-list li a {
             display: block;
-            text-decoration: none;
-            color: #535353;
-            padding: 18px 22px;
+            padding: 14px 18px;
+            color: var(--text);
             transition: 0.3s;
-            font-weight: 500;
         }
 
-        .faq-sidebar ul li a:hover {
-            background: #2493ad;
-            color: #fff;
-            padding-left: 30px;
+        .faq-topic-list li a:hover {
+            background: #f8f8f8;
+            color: var(--secondary);
         }
 
-        .faq-content {
-            flex: 1;
+        .extra-topic {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: 0.4s ease;
         }
 
-        .search-box {
-            margin-bottom: 35px;
+        #faq-toggle:checked~.faq-topic-list .extra-topic {
+            max-height: 70px;
+            opacity: 1;
         }
 
-        .search-box input {
+        
+
+
+        .faq-section {
+            background: var(--white);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+            display: none;
+            animation: fadeIn 0.3s ease;
             width: 100%;
-            height: 65px;
-            border: none;
-            border-radius: 15px;
-            padding: 0 25px;
-            font-size: 16px;
-            font-family: 'Roboto Slab', serif;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-            outline: none;
-        }
-
-        .faq-section {
-            background: #fff;
-            border-radius: 18px;
-            padding: 40px;
-            margin-bottom: 35px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-            display: none;
-            scroll-margin-top: 120px;
-        }
-
-        .faq-section {
-            display: none;
-            animation: fadeIn 0.4s ease;
         }
 
         #general {
@@ -296,141 +560,31 @@
             display: none;
         }
 
-        @keyframes fadeIn {
-
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
+        .faq-title {
+            background: #0c5d91;
+            color: var(--white);
+            padding: 14px 18px;
+            font-size: var(--h4);
+            font-weight: 600;
         }
 
-        .faq-section {
-            animation: sectionAnimation 0.6s ease;
-        }
+        
 
         .faq-item {
-            animation: faqItemAnimation 0.5s ease;
-            animation-fill-mode: both;
+            border-bottom: 1px solid #ececec;
         }
 
-        .faq-item:nth-child(2) {
-            animation-delay: 0.1s;
-        }
-
-        .faq-item:nth-child(3) {
-            animation-delay: 0.2s;
-        }
-
-        .faq-item:nth-child(4) {
-            animation-delay: 0.3s;
-        }
-
-        .faq-item:nth-child(5) {
-            animation-delay: 0.4s;
-        }
-
-        .faq-item {
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .faq-item:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .faq-answer {
-            animation: answerFade 0.4s ease;
-        }
-
-        @keyframes sectionAnimation {
-
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-        @keyframes faqItemAnimation {
-
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-        }
-
-        @keyframes answerFade {
-
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-        .faq-section-title {
-            font-size: 34px;
-            color: #ad2481;
-            margin-bottom: 35px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .faq-section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 85px;
-            height: 4px;
-            background: #2493ad;
-            border-radius: 50px;
-        }
-
-        .faq-item {
-            border: 1px solid #e4e4e4;
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 18px;
-            transition: 0.3s;
-        }
-
-        .faq-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        .faq-item:last-child {
+            border-bottom: none;
         }
 
         .faq-item summary {
             list-style: none;
             cursor: pointer;
-            padding: 22px 25px;
-            font-size: 18px;
-            font-weight: 600;
+            padding: 18px;
             position: relative;
+            font-size: 16px;
+            font-weight: 500;
         }
 
         .faq-item summary::-webkit-details-marker {
@@ -438,388 +592,153 @@
         }
 
         .faq-item summary::after {
-            content: '+';
+            content: "+";
             position: absolute;
-            right: 25px;
+            right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 28px;
-            color: #ad2481;
+            font-size: 22px;
             font-weight: 700;
         }
 
-        .faq-item[open] summary {
-            background: #ad2481;
-            color: #fff;
-        }
-
         .faq-item[open] summary::after {
-            content: '−';
-            color: #fff;
+            content: "−";
         }
 
         .faq-answer {
-            padding: 25px;
-            background: #fafafa;
-            line-height: 1.9;
-            font-size: 15px;
+            padding: 0 18px 18px;
+            animation: fadeIn 0.3s ease;
         }
 
+        
+
+        .footer {
+            background: #eceff2;
+            border-top: 1px solid var(--border);
+            margin-top: 50px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            padding: 50px 0;
+        }
+
+        .footer-column h4 {
+            color: #0c5d91;
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .footer-column h4::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background: #0c5d91;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: var(--text);
+        }
+
+        .footer-column p {
+            margin-bottom: 12px;
+        }
+
+        
+
         .footer-newsletter {
-            width: 90%;
-            max-width: 1450px;
-            margin: 0 auto;
-            padding: 0 0 60px;
+            padding-bottom: 40px;
         }
 
         .footer-newsletter h2 {
-            font-size: 36px;
-            color: #2493ad;
-            margin-bottom: 15px;
+            color: #0c5d91;
+            margin-bottom: 10px;
         }
 
         .footer-newsletter p {
-            font-size: 16px;
-            color: #d6d6d6;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .newsletter-form {
+            width: 340px;
             display: flex;
-            align-items: center;
-            max-width: 500px;
             overflow: hidden;
-            border-radius: 16px;
-            background: #fff;
+            border-radius: 6px;
         }
 
         .newsletter-form input {
             flex: 1;
-            height: 60px;
             border: none;
+            padding: 16px;
             outline: none;
-            padding: 0 20px;
-            font-size: 16px;
             font-family: 'Roboto Slab', serif;
-            color: #535353;
-        }
-
-        .newsletter-form input::placeholder {
-            color: #8b8b8b;
         }
 
         .newsletter-form button {
-            width: 70px;
-            height: 60px;
+            width: 60px;
             border: none;
-            background: #ad2481;
-            font-size: 26px;
+            background: #c7d51d;
+            font-size: 24px;
             cursor: pointer;
-            transition: 0.4s;
-        }
-
-        .newsletter-form button:hover {
-            background: #2493ad;
-            color: #fff;
-        }
-
-
-        @media(max-width:768px) {
-
-            .footer-newsletter h2 {
-                font-size: 34px;
-            }
-
-            .footer-newsletter p {
-                font-size: 16px;
-            }
-
-            .newsletter-form input {
-                height: 65px;
-                font-size: 17px;
-            }
-
-            .newsletter-form button {
-                width: 75px;
-                height: 65px;
-                font-size: 28px;
-            }
-
-        }
-
-        .footer {
-            background: #1c1c1c;
-            margin-top: 80px;
-            color: #fff;
-        }
-
-        .footer-top {
-            width: 90%;
-            max-width: 1450px;
-            margin: auto;
-            padding: 70px 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-logo {
-            font-size: 40px;
-            font-weight: 700;
-            color: #ad2481;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo span {
-            color: #2493ad;
-        }
-
-        .footer-column h3 {
-            margin-bottom: 28px;
-            color: #2493ad;
-        }
-
-        .footer-column p {
-            line-height: 150%;
-            color: #d9d9d9;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 14px;
-        }
-
-        .footer-column ul li a {
-            text-decoration: none;
-            color: #d9d9d9;
-            transition: 0.3s;
-        }
-
-        .footer-column ul li a:hover {
-            color: #ad2481;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
-            padding: 22px;
+            padding: 18px 0;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
         }
 
-        .faq-topic-list li a:focus {
-            background: #2493ad;
-            color: #fff;
-            padding-left: 30px;
-        }
+        
 
-        .stats-section {
-            width: 90%;
-            max-width: 1450px;
-            margin: 60px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
+        @keyframes fadeIn {
 
-        .stat-card {
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: 0.4s;
-        }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
 
-        .stat-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-card h2 {
-            color: #ad2481;
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
-
-        .stat-card p {
-            font-size: 16px;
-            line-height: 150%;
-        }
-
-        .popular-questions {
-            width: 90%;
-            max-width: 1450px;
-            margin: 60px auto;
-        }
-
-        .popular-title {
-            font-size: 42px;
-            color: #ad2481;
-            margin-bottom: 35px;
-        }
-
-        .popular-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .popular-card {
-            background: #fff;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: 0.4s;
-        }
-
-        .popular-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .popular-card h3 {
-            margin-bottom: 15px;
-            color: #2493ad;
-        }
-
-        .support-section {
-            width: 90%;
-            max-width: 1450px;
-            margin: 70px auto;
-        }
-
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .support-card {
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: 0.4s;
-        }
-
-        .support-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .support-icon {
-            font-size: 45px;
-            margin-bottom: 18px;
-        }
-
-        .support-card h3 {
-            margin-bottom: 15px;
-            color: #ad2481;
-        }
-
-        .testimonial-section {
-            width: 90%;
-            max-width: 1450px;
-            margin: 70px auto;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .testimonial-card {
-            background: #fff;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: 0.4s;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .testimonial-card p {
-            line-height: 1.9;
-            margin-bottom: 18px;
-        }
-
-        .testimonial-card h4 {
-            color: #2493ad;
-        }
-
-        .floating-help {
-            position: fixed;
-            right: 25px;
-            bottom: 25px;
-            background: linear-gradient(135deg, #ad2481, #2493ad);
-            color: #fff;
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            text-decoration: none;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-            animation: bounce 2s infinite;
-            z-index: 999;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
+            to {
+                opacity: 1;
                 transform: translateY(0);
             }
 
-            50% {
-                transform: translateY(-10px);
+        }
+
+        
+
+        @media(max-width:992px) {
+
+            .faq-layout {
+                flex-direction: column;
+            }
+
+            .faq-sidebar {
+                width: 100%;
             }
 
         }
 
         @media(max-width:768px) {
 
-            .faq-wrapper {
-                flex-direction: column;
-            }
-
-            .faq-sidebar {
-                width: 100%;
-            }
-
-            .faq-section {
-                padding: 25px;
-            }
-
-            .faq-hero h1 {
-                font-size: 42px;
-            }
-
-            .popular-title {
-                font-size: 32px;
-            }
-
-        }
-
-        @media(max-width:992px) {
-
-            .faq-wrapper {
-                flex-direction: column;
-            }
-
-            .faq-sidebar {
-                width: 100%;
-                position: relative;
-                top: 0;
-            }
-
             .navbar {
                 display: none;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .newsletter-form {
+                width: 100%;
             }
 
         }
@@ -829,544 +748,1043 @@
 
 <body>
 
-    <div class="top-bar">
-
-        <div>
-            📞 +1 800-456-7821
-        </div>
-
-        <div>
-            ✉ support@pixelcraftstudio.com
-        </div>
-
-    </div>
+    
 
     <header class="main-header">
 
-        <div class="logo">
-            Pixel<span>Craft</span>
-        </div>
+        <div class="header-container">
 
-        <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Printing</a>
-            <a href="#">Packaging</a>
-            <a href="#">Contact</a>
-        </nav>
+            
+
+            <div class="logo">
+                Pixel<span>Craft</span>
+            </div>
+            
+
+            <div class="search-bar">
+
+                <input type="text" placeholder="Search For Products">
+
+                <button>
+                    🔍
+                </button>
+
+            </div>
+
+            
+
+            <div class="header-contact">
+
+                <div class="contact-box">
+
+                    <span class="icon">
+                        🎧
+                    </span>
+
+                    <div>
+
+                        <p>
+                            CALL US : +1 800-456-7821
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-box">
+
+                    <span class="icon">
+                        ✉
+                    </span>
+
+                    <p>
+                        support@pixelcraftstudio.com
+                    </p>
+
+                </div>
+
+                <div class="contact-box">
+
+                    <span class="icon">
+                        ↪
+                    </span>
+
+                    <p>
+                        Login/Register
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </header>
 
-    <section class="faq-hero">
+    
 
-        <h1>Frequently Asked Questions</h1>
+    <nav class="menu-bar">
 
-        <p>
-            Find answers regarding printing services,
-            customization, shipping, pricing,
-            artwork setup, and customer support.
-        </p>
+        <div class="menu-container">
+
+            <ul class="menu-list">
+
+                <li>
+                    <a href="#">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Print Solutions ▼
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Marketing Materials ▼
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Packaging Studio ▼
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Office Essentials ▼
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Event Branding ▼
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        📄 Custom Quote
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    
+
+    <section class="page-header">
+
+        <div class="container">
+
+            <h2>FAQs</h2>
+
+            <div class="breadcrumb">
+                Home >  <span>FAQs</span>
+            </div>
+
+        </div>
 
     </section>
 
-    <section class="stats-section">
+    
 
-        <div class="stat-card">
-            <h2>15+</h2>
-            <p>Support Categories</p>
-        </div>
+    <section class="search-section">
 
-        <div class="stat-card">
-            <h2>5000+</h2>
-            <p>Orders Completed</p>
-        </div>
+        <div class="container">
 
-        <div class="stat-card">
-            <h2>24/7</h2>
-            <p>Customer Assistance</p>
-        </div>
+            <div class="search-box">
 
-        <div class="stat-card">
-            <h2>98%</h2>
-            <p>Client Satisfaction</p>
-        </div>
+                <input type="text" placeholder="Keywords">
 
-    </section>
+                <div class="search-actions">
 
-    <section class="popular-questions">
+                    <a href="#">Reset</a>
+                    <a href="#">Expand All</a>
 
-        <h2 class="popular-title">Popular Questions</h2>
+                </div>
 
-        <div class="popular-grid">
-
-            <div class="popular-card">
-                <h3>📦 How long does shipping take?</h3>
-                <p>
-                    Standard delivery usually takes
-                    between 3–7 business days.
-                </p>
-            </div>
-
-            <div class="popular-card">
-                <h3>🎨 What file formats are supported?</h3>
-                <p>
-                    We accept PDF, AI, PSD,
-                    PNG, SVG, and EPS files.
-                </p>
-            </div>
-
-            <div class="popular-card">
-                <h3>💳 Do you offer bulk discounts?</h3>
-                <p>
-                    Yes. Wholesale pricing is available
-                    for large quantity orders.
-                </p>
             </div>
 
         </div>
 
     </section>
+
+    
 
     <section class="faq-wrapper">
 
-        <aside class="faq-sidebar">
+        <div class="container">
 
-            <input type="checkbox" id="faq-toggle">
+            <div class="faq-layout">
 
-            <div class="faq-sidebar-header">
+                
 
-                <h3>FAQ Topics</h3>
+                <aside class="faq-sidebar">
 
-                <label for="faq-toggle" class="toggle-btn"></label>
+                    <input type="checkbox" id="faq-toggle">
 
-            </div>
+                    <div class="faq-sidebar-header">
 
-            <ul class="faq-topic-list">
-                <li><a href="#general">General FAQs</a></li>
-                <li><a href="#account">Accounts & Orders</a></li>
-                <li><a href="#products">Products & Materials</a></li>
-                <li><a href="#printing">Printing Process</a></li>
-                <li><a href="#shipping">Shipping & Delivery</a></li>
+                        <h4>FAQ TOPICS</h4>
 
-                <li class="extra-topic"><a href="#pricing">Pricing & Payments</a></li>
-                <li class="extra-topic"><a href="#support">Customer Support</a></li>
-                <li class="extra-topic"><a href="#artwork">Artwork & File Setup</a></li>
-                <li class="extra-topic"><a href="#customization">Customization</a></li>
-                <li class="extra-topic"><a href="#returns">Returns & Refunds</a></li>
-                <li class="extra-topic"><a href="#security">Privacy & Security</a></li>
-                <li class="extra-topic"><a href="#eco">Eco Friendly Printing</a></li>
-                <li class="extra-topic"><a href="#business">Business Solutions</a></li>
-                <li class="extra-topic"><a href="#design">Design Services</a></li>
-                <li class="extra-topic"><a href="#technical">Technical Support</a></li>
-            </ul>
+                        <label for="faq-toggle" class="toggle-btn"></label>
 
-        </aside>
-
-        <div class="faq-content">
-
-            <div class="search-box">
-                <input type="text" placeholder="Search FAQ Topics...">
-            </div>
-
-            <div class="faq-section" id="general">
-
-                <h2 class="faq-section-title">General FAQs</h2>
-
-                <details class="faq-item">
-                    <summary>What services do you provide?</summary>
-                    <div class="faq-answer">
-                        We provide commercial printing,
-                        custom branding, signage,
-                        packaging, and promotional products.
                     </div>
-                </details>
 
-                <details class="faq-item">
-                    <summary>Can I place bulk orders?</summary>
-                    <div class="faq-answer">
-                        Yes. Bulk and wholesale pricing
-                        is available for businesses.
+                    <ul class="faq-topic-list">
+
+                        <li><a href="#general">General FAQs</a></li>
+                        <li><a href="#account">Accounts & Orders</a></li>
+                        <li><a href="#products">Products & Materials</a></li>
+                        <li><a href="#printing">Printing Process</a></li>
+                        <li><a href="#shipping">Shipping & Delivery</a></li>
+
+                        <li class="extra-topic">
+                            <a href="#pricing">Pricing & Payments</a>
+                        </li>
+
+                        <li class="extra-topic">
+                            <a href="#support">Customer Support</a>
+                        </li>
+
+                        <li class="extra-topic">
+                            <a href="#returns">Returns & Refunds</a>
+                        </li>
+
+                    </ul>
+
+                </aside>
+
+                
+
+                <div class="faq-content">
+
+                    
+
+                    
+
+                    <div class="faq-section" id="general">
+
+                        <div class="faq-title">
+                            GENERAL FAQS
+                        </div>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                What types of printing products do you offer?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    We offer banners, business cards,
+                                    brochures, flyers, packaging,
+                                    promotional products, signage,
+                                    labels, and custom branding materials
+                                    for businesses and events.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                What is bleed and why is it important?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Bleed is the extra design area
+                                    beyond the final trim size.
+                                    It prevents unwanted white edges
+                                    after cutting and ensures
+                                    professional print quality.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                What materials and finishes are available?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    We provide matte, gloss,
+                                    velvet lamination, textured papers,
+                                    waterproof vinyl, eco-friendly stocks,
+                                    UV coating, and premium card materials.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                What is your standard turnaround time?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Standard turnaround time ranges
+                                    from 2–7 business days depending
+                                    on product type, order quantity,
+                                    finishing options, and delivery location.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you provide custom size printing?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. We offer fully customized
+                                    print dimensions for banners,
+                                    packaging, signage, stickers,
+                                    and promotional products.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
-                </details>
 
-            </div>
+                    
 
-            <div class="faq-section" id="account">
+                    <div class="faq-section" id="account">
 
-                <h2 class="faq-section-title">Accounts & Orders</h2>
+                        <div class="faq-title">
+                            ACCOUNTS & ORDERS
+                        </div>
 
-                <details class="faq-item">
-                    <summary>Can I modify my order?</summary>
-                    <div class="faq-answer">
-                        Yes, changes are possible before
-                        production starts.
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I modify my order?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Orders can be modified
+                                    before production starts.
+                                    Once printing begins,
+                                    changes may not be possible.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                How can I track my order?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Tracking information is sent
+                                    through email once your order
+                                    has been shipped from our facility.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I cancel an order after payment?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Orders may be cancelled before
+                                    production begins. Refund eligibility
+                                    depends on the current stage
+                                    of processing.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do I need an account to place orders?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    No. Guest checkout is available,
+                                    but creating an account helps
+                                    manage orders, invoices,
+                                    and saved artwork files.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I reorder previous products?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Existing customers can
+                                    reorder previous products using
+                                    saved artwork and order history
+                                    from their account dashboard.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
-                </details>
 
-                <details class="faq-item">
-                    <summary>How can I track my order?</summary>
-                    <div class="faq-answer">
-                        Tracking details are sent through email.
+                    
+
+                    <div class="faq-section" id="products">
+
+                        <div class="faq-title">
+                            PRODUCTS & MATERIALS
+                        </div>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are waterproof materials available?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Waterproof and weatherproof
+                                    materials are available for
+                                    outdoor banners, labels,
+                                    signs, and promotional products.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you offer eco-friendly materials?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. We provide recyclable papers,
+                                    biodegradable packaging,
+                                    and sustainable print solutions
+                                    for environmentally conscious brands.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                What paper thickness options are available?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    We offer multiple GSM options
+                                    ranging from lightweight flyers
+                                    to premium thick business cards
+                                    and packaging boards.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are premium finishes available?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Premium finishes include
+                                    spot UV, foil stamping,
+                                    embossing, soft-touch lamination,
+                                    and gloss coating.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I request product samples?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Sample kits are available
+                                    for selected materials and finishes
+                                    to help customers choose
+                                    the best option.
+                                </p>
+
+                            </div>
+
+
+
+                        </details>
+
                     </div>
-                </details>
 
-            </div>
+                    
 
-            <div class="faq-section" id="products">
+                    <div class="faq-section" id="printing">
 
-                <h2 class="faq-section-title">Products & Materials</h2>
+                        <div class="faq-title">
+                            PRINTING PROCESS
+                        </div>
 
-                <details class="faq-item">
-                    <summary>Are waterproof materials available?</summary>
-                    <div class="faq-answer">
-                        Yes. Outdoor weather-resistant
-                        materials are available.
+                        <details class="faq-item">
+
+                            <summary>
+                                What printing methods do you use?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    We provide digital, offset,
+                                    UV, large-format,
+                                    and screen printing services
+                                    for various products.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I request print samples?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Sample proofs are available
+                                    before final production begins
+                                    for quality approval.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you provide color matching?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. We support CMYK and
+                                    Pantone color matching for
+                                    accurate brand consistency.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are double-sided prints available?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Double-sided printing
+                                    is available for brochures,
+                                    flyers, menus, and cards.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can you print large-format banners?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. We print large-format
+                                    banners, posters, wall graphics,
+                                    and exhibition displays.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
-                </details>
 
-                <details class="faq-item">
-                    <summary>Do you offer premium paper stocks?</summary>
-                    <div class="faq-answer">
-                        Matte, gloss, kraft,
-                        textured, and luxury stocks are available.
+                    
+
+                    <div class="faq-section" id="shipping">
+
+                        <div class="faq-title">
+                            SHIPPING & DELIVERY
+                        </div>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                How long does delivery take?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Standard shipping usually takes
+                                    between 3–7 business days
+                                    depending on location.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you offer express delivery?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Express shipping options
+                                    are available during checkout
+                                    for urgent orders.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I track my shipment?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Tracking details are sent
+                                    through email after the
+                                    order is dispatched.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you ship internationally?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. International shipping
+                                    is available for selected
+                                    countries worldwide.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                What happens if delivery is delayed?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Our support team will provide
+                                    updated delivery information
+                                    and assist with tracking.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
-                </details>
 
-            </div>
+                    
 
-            <div class="faq-section" id="printing">
+                    <div class="faq-section" id="pricing">
 
-                <h2 class="faq-section-title">Printing Process</h2>
+                        <div class="faq-title">
+                            PRICING & PAYMENTS
+                        </div>
 
-                <details class="faq-item">
-                    <summary>Which printing technologies are used?</summary>
-                    <div class="faq-answer">
-                        We use offset, UV,
-                        digital, and large-format printing.
+                        <details class="faq-item">
+
+                            <summary>
+                                Which payment methods are accepted?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    We accept debit cards,
+                                    credit cards, PayPal,
+                                    and bank transfers.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you offer bulk discounts?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Bulk quantity discounts
+                                    are available depending on
+                                    order size and products.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I request custom quotations?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Custom quotations are
+                                    available for large or
+                                    specialized print projects.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are taxes included in pricing?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Taxes are calculated during
+                                    checkout based on your
+                                    billing and shipping region.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you provide corporate pricing?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Corporate and reseller
+                                    pricing options are available
+                                    for recurring business clients.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
-                </details>
 
-                <details class="faq-item">
-                    <summary>Can I approve proofs before printing?</summary>
-                    <div class="faq-answer">
-                        Yes. Digital proofs are shared
-                        before production.
+                    
+
+                    <div class="faq-section" id="support">
+
+                        <div class="faq-title">
+                            CUSTOMER SUPPORT
+                        </div>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                How can I contact support?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Support is available through
+                                    phone, email, and live chat.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                What are your support hours?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Our support team is available
+                                    Monday to Saturday from
+                                    9:00 AM to 7:00 PM.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Do you provide technical assistance?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. We help customers with
+                                    artwork setup, print files,
+                                    and technical print issues.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Is live chat support available?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Live chat assistance is
+                                    available during business hours
+                                    for quick responses.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I request a callback?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Customers can request
+                                    a callback through our
+                                    support contact form.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
-                </details>
 
-            </div>
+                    
 
-            <div class="faq-section" id="shipping">
+                    <div class="faq-section" id="returns">
 
-                <h2 class="faq-section-title">Shipping & Delivery</h2>
+                        <div class="faq-title">
+                            RETURNS & REFUNDS
+                        </div>
 
-                <details class="faq-item">
-                    <summary>How long does shipping take?</summary>
-                    <div class="faq-answer">
-                        Standard delivery takes
-                        3–7 business days.
+                        <details class="faq-item">
+
+                            <summary>
+                                Can custom products be returned?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Returns are accepted only
+                                    for damaged or incorrect items.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                How long do refunds take?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Approved refunds are processed
+                                    within 5–10 business days.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                What if my order arrives damaged?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Contact support within 48 hours
+                                    with product images for
+                                    replacement assistance.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are shipping charges refundable?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Shipping charges are refundable
+                                    only if the issue was caused
+                                    by our production error.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I exchange printed products?
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Exchanges are available for
+                                    defective or incorrectly
+                                    produced print items only.
+                                </p>
+
+                            </div>
+
+                        </details>
+
                     </div>
-                </details>
 
-                <details class="faq-item">
-                    <summary>Do you offer international shipping?</summary>
-                    <div class="faq-answer">
-                        Yes. International delivery
-                        is available for selected regions.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="pricing">
-
-                <h2 class="faq-section-title">Pricing & Payments</h2>
-
-                <details class="faq-item">
-                    <summary>Do you provide wholesale pricing?</summary>
-                    <div class="faq-answer">
-                        Yes. Bulk discounts are available.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What payment methods are accepted?</summary>
-                    <div class="faq-answer">
-                        We accept debit cards,
-                        credit cards, and online banking.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="support">
-
-                <h2 class="faq-section-title">Customer Support</h2>
-
-                <details class="faq-item">
-                    <summary>How can I contact support?</summary>
-                    <div class="faq-answer">
-                        Contact support through
-                        email, phone, or live chat.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What are support hours?</summary>
-                    <div class="faq-answer">
-                        Monday to Saturday
-                        from 9:00 AM to 7:00 PM.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="artwork">
-
-                <h2 class="faq-section-title">Artwork & File Setup</h2>
-
-                <details class="faq-item">
-                    <summary>What file formats are accepted?</summary>
-                    <div class="faq-answer">
-                        We accept PDF, AI, EPS, PSD, PNG,
-                        SVG, and high-resolution JPG files.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What is the recommended image resolution?</summary>
-                    <div class="faq-answer">
-                        A minimum of 300 DPI is recommended
-                        for sharp and professional print quality.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Do fonts need to be outlined?</summary>
-                    <div class="faq-answer">
-                        Yes. Outlining fonts avoids font
-                        compatibility issues during production.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What is bleed in printing?</summary>
-                    <div class="faq-answer">
-                        Bleed is the extra area added around
-                        artwork to avoid white edges after trimming.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="customization">
-
-                <h2 class="faq-section-title">Customization</h2>
-
-                <details class="faq-item">
-                    <summary>Can I request custom sizes?</summary>
-                    <div class="faq-answer">
-                        Yes. Products can be fully customized
-                        according to your preferred dimensions.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Do you offer custom packaging?</summary>
-                    <div class="faq-answer">
-                        Yes. We provide custom boxes,
-                        labels, inserts, and branded packaging.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Can QR codes be added to products?</summary>
-                    <div class="faq-answer">
-                        Yes. QR codes, serial numbers,
-                        and barcode printing are available.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="returns">
-
-                <h2 class="faq-section-title">Returns & Refunds</h2>
-
-                <details class="faq-item">
-                    <summary>Can custom products be returned?</summary>
-                    <div class="faq-answer">
-                        Since products are custom-made,
-                        returns are accepted only for damaged
-                        or incorrect orders.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What if my order arrives damaged?</summary>
-                    <div class="faq-answer">
-                        Contact support within 48 hours
-                        with photos of the damaged product.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>How long do refunds take?</summary>
-                    <div class="faq-answer">
-                        Approved refunds are generally processed
-                        within 5–7 business days.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="security">
-
-                <h2 class="faq-section-title">Privacy & Security</h2>
-
-                <details class="faq-item">
-                    <summary>Is payment information secure?</summary>
-                    <div class="faq-answer">
-                        Yes. All transactions are encrypted
-                        using secure payment gateways.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Will uploaded files remain private?</summary>
-                    <div class="faq-answer">
-                        Absolutely. Customer artwork and files
-                        are kept confidential and secure.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Do you share customer data?</summary>
-                    <div class="faq-answer">
-                        No. Customer information is never
-                        sold or shared with third parties.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="eco">
-
-                <h2 class="faq-section-title">Eco Friendly Printing</h2>
-
-                <details class="faq-item">
-                    <summary>Do you offer recycled paper options?</summary>
-                    <div class="faq-answer">
-                        Yes. Recycled and sustainable
-                        paper stocks are available.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Are eco-friendly inks used?</summary>
-                    <div class="faq-answer">
-                        We use environmentally safer inks
-                        for selected printing processes.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Can packaging be biodegradable?</summary>
-                    <div class="faq-answer">
-                        Yes. Biodegradable and recyclable
-                        packaging options are available.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="business">
-
-                <h2 class="faq-section-title">Business Solutions</h2>
-
-                <details class="faq-item">
-                    <summary>Do you provide reseller pricing?</summary>
-                    <div class="faq-answer">
-                        Yes. Wholesale and reseller
-                        pricing programs are available.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Can franchises place recurring orders?</summary>
-                    <div class="faq-answer">
-                        Yes. We support recurring
-                        and multi-location business orders.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Do you offer dedicated account managers?</summary>
-                    <div class="faq-answer">
-                        Dedicated account managers are available
-                        for enterprise customers.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="design">
-
-                <h2 class="faq-section-title">Design Services</h2>
-
-                <details class="faq-item">
-                    <summary>Do you provide logo design?</summary>
-                    <div class="faq-answer">
-                        Yes. Our creative team offers
-                        logo and branding design services.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Can existing artwork be edited?</summary>
-                    <div class="faq-answer">
-                        Yes. Minor edits and artwork
-                        adjustments can be requested.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Do you provide social media graphics?</summary>
-                    <div class="faq-answer">
-                        Yes. Digital graphics and promotional
-                        social media creatives are available.
-                    </div>
-                </details>
-
-            </div>
-
-            <div class="faq-section" id="technical">
-
-                <h2 class="faq-section-title">Technical Support</h2>
-
-                <details class="faq-item">
-                    <summary>What if my uploaded file fails?</summary>
-                    <div class="faq-answer">
-                        Our support team can help troubleshoot
-                        upload and compatibility issues.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Do you support large file uploads?</summary>
-                    <div class="faq-answer">
-                        Yes. Large artwork files can
-                        be shared through cloud upload links.
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Can technical support assist with setup?</summary>
-                    <div class="faq-answer">
-                        Yes. Our team can guide you through
-                        artwork preparation and specifications.
-                    </div>
-                </details>
+                </div>
 
             </div>
 
@@ -1374,142 +1792,87 @@
 
     </section>
 
-    <section class="support-section">
-
-        <div class="support-grid">
-
-            <div class="support-card">
-                <div class="support-icon">💬</div>
-                <h3>Live Chat</h3>
-                <p>Instant support from our expert team.</p>
-            </div>
-
-            <div class="support-card">
-                <div class="support-icon">📧</div>
-                <h3>Email Support</h3>
-                <p>Get help anytime through email assistance.</p>
-            </div>
-
-            <div class="support-card">
-                <div class="support-icon">📞</div>
-                <h3>Phone Support</h3>
-                <p>Talk directly with our support specialists.</p>
-            </div>
-
-            <div class="support-card">
-                <div class="support-icon">🏢</div>
-                <h3>Business Inquiry</h3>
-                <p>Dedicated support for enterprise clients.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="testimonial-section">
-
-        <div class="testimonial-grid">
-
-            <div class="testimonial-card">
-                <p>
-                    "Excellent print quality and
-                    very fast delivery service."
-                </p>
-
-                <h4>— Michael Carter</h4>
-            </div>
-
-            <div class="testimonial-card">
-                <p>
-                    "Professional support team and
-                    premium packaging solutions."
-                </p>
-
-                <h4>— Olivia Smith</h4>
-            </div>
-
-            <div class="testimonial-card">
-                <p>
-                    "The customization options were
-                    exactly what our business needed."
-                </p>
-
-                <h4>— Daniel Wilson</h4>
-            </div>
-
-        </div>
-
-    </section>
-
-    <a href="#support" class="floating-help">
-        💬
-    </a>
+    
 
     <footer class="footer">
 
-        <div class="footer-top">
+        <div class="container">
 
-            <div class="footer-column">
+            <div class="footer-top">
 
-                <div class="footer-logo">
-                    Pixel<span>Craft</span>
+                <div class="footer-column">
+
+                    <h4>CATEGORIES</h4>
+
+                    <ul>
+
+                        <li><a href="#">Banners</a></li>
+                        <li><a href="#">Mesh Banners</a></li>
+                        <li><a href="#">Retractable Banners</a></li>
+                        <li><a href="#">PVC Signs</a></li>
+
+                    </ul>
+
                 </div>
 
+                <div class="footer-column">
+
+                    <h4>INFORMATION</h4>
+
+                    <ul>
+
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Request Quote</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Resources</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h4>CONTACT US</h4>
+
+                    <p>📍 45 Hudson Street, NY 10013</p>
+                    <p>📞 +1 800-456-7821</p>
+                    <p>✉ support@pixelcraftstudio.com</p>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="footer-newsletter">
+
+                <h2>
+                    Stay Connected With Us
+                </h2>
+
                 <p>
-                    PixelCraft Print Studio provides
-                    premium printing and branding solutions
-                    for businesses worldwide.
+                    Subscribe to get latest offers and updates.
                 </p>
 
-            </div>
+                <form class="newsletter-form">
 
-            <div class="footer-column">
+                    <input type="email" placeholder="Enter Your Email">
 
-                <h3>Quick Links</h3>
+                    <button type="submit">
+                        ↗
+                    </button>
 
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Printing</a></li>
-                    <li><a href="#">Packaging</a></li>
-                </ul>
+                </form>
 
             </div>
-
-            <div class="footer-column">
-
-                <h3>Contact</h3>
-
-                <p>📍 45 Hudson Street, NY 10013</p>
-                <p>📞 +1 800-456-7821</p>
-                <p>✉ support@pixelcraftstudio.com</p>
-
-            </div>
-
-        </div>
-
-        <div class="footer-newsletter">
-
-            <h2>Stay Connected With Us</h2>
-
-            <p>
-                Subscribe to get latest offers and updates.
-            </p>
-
-            <form class="newsletter-form">
-
-                <input type="email" placeholder="Enter Your Email">
-
-                <button type="submit">
-                    ↗
-                </button>
-
-            </form>
 
         </div>
 
         <div class="footer-bottom">
-            © 2026 PixelCraft Print Studio. All Rights Reserved.
+
+            Copyright © 2026 PixelCraft Print Studio.
+            All Rights Reserved.
+
         </div>
 
     </footer>
